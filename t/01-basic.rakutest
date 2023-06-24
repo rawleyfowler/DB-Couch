@@ -1,6 +1,8 @@
 use Test;
 use DB::Couch;
 
-pass "replace me";
+plan 1;
+
+use-ok 'DB::Couch';
 
 done-testing;

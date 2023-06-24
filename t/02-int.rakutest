@@ -1,0 +1,29 @@
+use Test;
+use DB::Couch;
+use DB::Couch::Document;
+use Test::HTTP::Server;
+
+class Book is DB::Couch::Document {
+    has Str:D $.title is required;
+    has Int:D $.page-count is required;
+}
+
+plan 3;
+
+my DB::Couch $c .= new(
+    username => 'foo',
+    password => 'bar',
+    db => 'books',
+    host => 'localhost',
+    is-secure => False
+);
+
+is $c.db, 'books', 'Did DB set properly?';
+is $c.host, 'localhost', 'Did host set properly?';
+
+my Book $d .= new(title => 'Raku Rocks', page-count => 999);
+my $test-server = Test::HTTP::Server.new( dir => '.' );
+
+ok method-to-test( host => 'http://localhost:{$test-server.port}' ), 'Test server started';
+
+done-testing;

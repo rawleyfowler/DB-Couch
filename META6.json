@@ -12,9 +12,13 @@
     "description": "A simple CouchDB abstraction for Raku",
     "license": "Artistic-2.0",
     "name": "DB::Couch",
-    "perl": "6.d",
+    "raku": "6.d",
     "provides": {
-        "DB::Couch": "lib/DB/Couch.rakumod"
+        "DB::Couch": "lib/DB/Couch.rakumod",
+        "DB::Couch::Document": "lib/DB/Couch/Document.rakumod",
+        "DB::Couch::X::NotFound": "lib/DB/Couch/X/NotFound.rakumod",
+        "DB::Couch::X::BadRequest": "lib/DB/Couch/X/BadRequest.rakumod",
+        "DB::Couch::X::Unauthorized": "lib/DB/Couch/X/Unauthorized.rakumod"
     },
     "resources": [
     ],
@@ -22,6 +26,7 @@
     "tags": [
     ],
     "test-depends": [
+        "Test::HTTP::Server"
     ],
     "version": "0.0.1"
 }
