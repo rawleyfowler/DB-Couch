@@ -1,0 +1,27 @@
+{
+    "authors": [
+        "Rawley Fowler"
+    ],
+    "build-depends": [
+    ],
+    "depends": [
+        "Cro::HTTP::Client",
+        "JSON::Fast",
+        "Base64"
+    ],
+    "description": "A simple CouchDB abstraction for Raku",
+    "license": "Artistic-2.0",
+    "name": "DB::Couch",
+    "perl": "6.d",
+    "provides": {
+        "DB::Couch": "lib/DB/Couch.rakumod"
+    },
+    "resources": [
+    ],
+    "source-url": "",
+    "tags": [
+    ],
+    "test-depends": [
+    ],
+    "version": "0.0.1"
+}
